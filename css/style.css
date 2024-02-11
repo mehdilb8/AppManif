@@ -1,0 +1,87 @@
+body {
+    font-family: 'Open Sans', sans-serif; /* Changement de police pour une apparence plus moderne */
+    background-color: #f7f7f7; /* Couleur de fond légèrement ajustée pour plus de douceur */
+    margin: 0;
+    padding: 0;
+    margin-left: 10%;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #2c3e50; /* Couleur de texte plus profonde pour un meilleur contraste */
+    background-color: #ecf0f1; /* Couleur de fond subtile pour les titres */
+    padding: 15px;
+    border-bottom: 3px solid #3498db; /* Bordure colorée pour plus de dynamisme */
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Ajout d'ombre pour un effet de profondeur */
+    transition: all 0.3s ease-in-out; /* Transition douce pour l'interaction */
+}
+
+form {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Ombre pour le formulaire */
+    background-color: #fff; /* Fond blanc pour ressortir sur le fond général */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #34495e; /* Couleur de texte ajustée pour les labels */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Légère ombre interne */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #3498db; /* Couleur de bordure pour la mise au point */
+}
+
+input[type="submit"] {
+    background-color: #3498db; /* Couleur de fond pour le bouton */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Ombre pour un effet 3D */
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9; /* Couleur plus foncée au survol */
+}
+
+/* Espacement entre les sections */
+h2, h3, h4, h5{
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        margin-left: 5%;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: calc(100% - 20px);
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    
+    input[type="submit"] {
+        padding: 12px 20px;
+    }
+}

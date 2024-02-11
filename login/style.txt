@@ -1,0 +1,54 @@
+/* Style pour le titre h1 */
+h1 {
+    font-size: 24px;
+    color: #333; /* Couleur du texte */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style pour les sous-titres h2 et h3 */
+h2, h3 {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Style pour les formulaires */
+form {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
+
+/* Style pour les boutons h4 */
+h4 {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Ajoutez vos propres styles CSS personnalisés ci-dessous */
+
