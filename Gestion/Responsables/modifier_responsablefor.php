@@ -10,14 +10,13 @@
         <label for="responsable">Sélectionnez un Responsable :</label>
         <select name="responsable" required>
             <?php
-            // Connexion à la base de données
             $conn = new mysqli("127.0.0.1", "root", "", "manif");
 
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // Récupérer la liste des responsables existants
+            
             $sql = "SELECT num_resp, nom_resp, prenom_resp FROM responsable";
             $result = $conn->query($sql);
 
