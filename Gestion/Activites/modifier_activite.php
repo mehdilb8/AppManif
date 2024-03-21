@@ -12,14 +12,14 @@
         <label for="activite">Sélectionnez une Activité à Modifier :</label>
         <select name="activite" required>
             <?php
-            // Connexion à la base de données
+            
             $conn = new mysqli("127.0.0.1", "root", "", "manif");
 
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // Récupérer la liste des activités existantes
+            
             $sql = "SELECT id_act, nom_act, description FROM activite";
             $result = $conn->query($sql);
 
@@ -44,14 +44,14 @@
         <label for="num_resp">Nouveau Responsable :</label>
         <select name="num_resp" required>
             <?php
-            // Connexion à la base de données
+            
             $conn = new mysqli("127.0.0.1", "root", "", "manif");
 
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // Récupérer la liste des responsables existants
+            
             $sql = "SELECT num_resp, nom_resp, prenom_resp FROM responsable";
             $result = $conn->query($sql);
 
