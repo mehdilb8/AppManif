@@ -7,7 +7,7 @@
 <body>
     <h1>gestion responsables </h1>
 
-    <!-- Formulaire d'ajout de responsable -->
+    
     <h2>Ajouter un Responsable</h2>
     <form method="post" action="ajouter_evenement.php">
         <label for="num_resp">Numero de responsable:</label>
