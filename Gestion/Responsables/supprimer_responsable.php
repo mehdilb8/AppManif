@@ -11,13 +11,12 @@
             <label for="responsable">Sélectionnez un responsable à supprimer:</label>
             <select name="responsable" required>
                 <?php
-                // connexion à la base de données 
                 $conn = new mysqli("127.0.0.1","root","","manif");
 
                 if ($conn->connect_error){
                     die("connection failed: " . $conn->connect_error);
                 }
-                //récupérer la liste des responsables existants 
+                
                 $sql  = "SELECT num_resp, nom_resp,prenom_resp FROM responsable";
                 $result = $conn->query($sql);
 
@@ -33,7 +32,7 @@
                 ?>
 
             </select>
-            <!-- Bouton de soumission -->
+            
     <input type="submit" value="Supprimer Responsable">
         </form>
     </form>
