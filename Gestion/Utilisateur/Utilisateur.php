@@ -9,7 +9,7 @@
 <body>
     <h1>Gestion des Utilisateurs</h1>
     <?php
-    // Connexion à la base de données
+    
     $conn = new mysqli("127.0.0.1", "root", "", "manif");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -42,19 +42,19 @@
         <input type="submit" value="Créer Utilisateur">
         </form>
         <?php 
-        // Vérifier si le formulaire a été soumis
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérifier si les champs du formulaire sont définis
+    
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'])) {
         // Récupérer et nettoyer les données du formulaire
         $user_username = $conn->real_escape_string($_POST['username']);
         $user_password = $conn->real_escape_string($_POST['password']); // Idéalement, utilisez password_hash() pour plus de sécurité
         $user_role = $conn->real_escape_string($_POST['role']);
 
-        // Préparer la requête SQL
+        
         $sql = "INSERT INTO users (username, password, role) VALUES ('$user_username', '$user_password', '$user_role')";
 
-        // Exécuter la requête
+        
         if ($conn->query($sql) === TRUE) {
             echo "Nouvel utilisateur créé avec succès";
         } else {
@@ -65,13 +65,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
     
 
-    <!-- Formulaire de Modification d'Utilisateur -->
+    
     <h2>Modifier un Utilisateur :</h2>
     <form method="post" action="">
         <label for="user_select">Sélectionner Utilisateur :</label>
         <select name="user_select" id="user_select" required>
         <?php
-    // Code PHP pour récupérer la liste des utilisateurs
+    
     $sql_users = "SELECT id, username FROM users";
     $result_users = $conn->query($sql_users);
 
@@ -100,13 +100,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
 
-    <!-- Formulaire de Suppression d'Utilisateur -->
+    
     <h2>Supprimer un Utilisateur :</h2>
     <form method="post" action="">
         <label for="user_delete">Sélectionner Utilisateur :</label>
         <select name="user_delete" id="user_delete" required>
         <?php
-    // Code PHP pour récupérer la liste des utilisateurs
+    
     $sql_users = "SELECT id, username FROM users";
     $result_users = $conn->query($sql_users);
 
