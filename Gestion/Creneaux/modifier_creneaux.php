@@ -9,14 +9,14 @@
     <h1>Liste des Créneaux</h1>
 
     <?php
-    // Connexion à la base de données
+    
     $conn = new mysqli("127.0.0.1", "root", "", "manif");
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Code pour la modification du créneau
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_creneau = isset($_POST["id_creneau"]) ;
         $heure_debut = isset($_POST["heure_debut"]) ;
@@ -35,12 +35,12 @@
         }
     }
 
-    // Récupérer les créneaux depuis la base de données
+    
     $sql = "SELECT id_creneau, heure_debut, heure_fin FROM creneau";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Afficher les créneaux dans un tableau
+        
         echo "<table border='1'>
                 <tr>
                     <th>ID du Créneau</th>
