@@ -8,13 +8,13 @@
 <body>
     <h1>Liste des Créneaux</h1>
 <?php
-// Connexion à la base de données
+
 $conn = new mysqli("127.0.0.1", "root", "", "manif");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Sélectionner tous les créneaux existants
+
 $sql = "SELECT id_creneau, heure_debut, heure_fin FROM creneau";
 $result = $conn->query($sql);
 
@@ -29,14 +29,13 @@ if ($result->num_rows > 0) {
     echo "<p>Aucun créneau trouvé dans la base de données.</p>";
 }
 
-// Traitement du formulaire d'ajout de créneau
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
     $id_creneau = isset($_POST["id_creneau"]) ? $_POST["id_creneau"] : null; // Allow null for auto-increment
     $heure_debut = isset($_POST["heure_debut"]) ? $_POST["heure_debut"] : "";
     $heure_fin = isset($_POST["heure_fin"]) ? $_POST["heure_fin"] : "";
 
-    // Check if the specified id_creneau already exists
+  
     $checkSql = "SELECT id_creneau FROM creneau WHERE id_creneau = ?";
     $checkStmt = $conn->prepare($checkSql);
     $checkStmt->bind_param("i", $id_creneau);
@@ -46,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($checkStmt->num_rows > 0) {
         echo "Erreur: id_creneau existe déjà.";
     } else {
-        // Proceed with the insertion
+        
         $insertSql = "INSERT INTO creneau (id_creneau, heure_debut, heure_fin) VALUES (?, ?, ?)";
         $insertStmt = $conn->prepare($insertSql);
         $insertStmt->bind_param("iss", $id_creneau, $heure_debut, $heure_fin);
