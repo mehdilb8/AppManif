@@ -20,7 +20,7 @@
         <label for="num_resp">Numero responsable:</label>
         <input type="text" name="num_resp" required>
         <br>
-        <!-- Vous pouvez ajouter d'autres champs pour les informations de l'activité -->
+        
         <input type="submit" value="Ajouter Activité">
     </form>
 </body>
